@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "middle-age-chef-woman-smiling-happily-cheerfully-waving-hand-welcoming-greeting-you-saying-goodbye_1194-360593.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
