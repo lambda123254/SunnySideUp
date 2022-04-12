@@ -61,11 +61,12 @@ struct Instruction {
 struct WeeklyRecipe {
     let dayNumber: Int
     let recipeId: Int
+    
 }
 class recipeData {
 
     static var recipeArray: [Recipes] = [
-        Recipes(recipeId: 1, recipeName: "Sambal Balado", recipeDesc: "Sambal Balado merupakan makanan khas indonesia jama kolonial belanda", cookTime: 25, calories: 234, imgString: "none",
+        Recipes(recipeId: 1, recipeName: "Sambal Balado", recipeDesc: "Sambal Balado merupakan makanan khas indonesia jaman kolonial belanda", cookTime: 25, calories: 234, imgString: "none",
             ingredient: [
                 Ingredient(ingredientId: 1,title: "Sawi", isChecked: false),
                 Ingredient(ingredientId: 2, title: "Bawang", isChecked: false)
@@ -79,5 +80,12 @@ class recipeData {
                 Preperation(ingredientId: 1, prepTitle: "Potong sawi kecil kecil")
             ])
     ]
+    
+    static var weeklyRecipeArray: [WeeklyRecipe] = []
+    
+    static func setWeeklyRecipe(dayNumber: Int, recipeId: Int){
+        recipeData.weeklyRecipeArray.append(WeeklyRecipe(dayNumber: dayNumber, recipeId: recipeId))
+    }
+    
 }
 

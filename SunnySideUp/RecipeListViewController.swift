@@ -69,8 +69,11 @@ class RecipeListViewController: ViewController {
                 imgString.append(recipeData.recipeArray[i].imgString)
                 recipeDesc.append(recipeData.recipeArray[i].recipeDesc)
                 for i in 0 ..< 7{
-                    weeklyRecipe.append(WeeklyRecipe(dayNumber: i + 1, recipeId: recipeData.recipeArray[count].recipeId))
+//                    weeklyRecipe.append(WeeklyRecipe(dayNumber: i + 1, recipeId: recipeData.recipeArray[count].recipeId))
+                    recipeData.setWeeklyRecipe(dayNumber: i + 1, recipeId: recipeData.recipeArray[count].recipeId)
                     count += 1
+                    
+
                     if count >= recipeData.recipeArray.count {
                         count = 0
                     }
@@ -78,7 +81,6 @@ class RecipeListViewController: ViewController {
             }
             
         }
-        print(weeklyRecipe)
         
         AllRecipeTableView.dataSource = self
         AllRecipeTableView.separatorStyle = .none
@@ -148,7 +150,7 @@ extension RecipeListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //        return "Day \(String(describing: weeklyRecipes[section].dayNumber!))"
 
-        return "Day \(String(describing: weeklyRecipe[section].dayNumber))"
+        return "Day \(String(describing: recipeData.weeklyRecipeArray[section].dayNumber))"
 
     }
     
