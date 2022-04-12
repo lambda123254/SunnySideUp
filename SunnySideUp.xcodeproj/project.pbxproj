@@ -11,6 +11,16 @@
 		B534885B2803BF4A00A0B292 /* Filter1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53488582803BF4A00A0B292 /* Filter1ViewController.swift */; };
 		B534885C2803BF4A00A0B292 /* Filter2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53488592803BF4A00A0B292 /* Filter2ViewController.swift */; };
 		B534885D2803BF4A00A0B292 /* PageConfrimation1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B534885A2803BF4A00A0B292 /* PageConfrimation1ViewController.swift */; };
+		B534885F280428CB00A0B292 /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B534885E280428CB00A0B292 /* RecipeListViewController.swift */; };
+		B53488612804290500A0B292 /* StructureDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53488602804290500A0B292 /* StructureDefinition.swift */; };
+		B53488632804292E00A0B292 /* RecipeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53488622804292E00A0B292 /* RecipeListTableViewCell.swift */; };
+		B5348868280458CD00A0B292 /* RecipePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5348864280458CC00A0B292 /* RecipePageViewController.swift */; };
+		B5348869280458CD00A0B292 /* IngredientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5348865280458CD00A0B292 /* IngredientListViewController.swift */; };
+		B534886A280458CD00A0B292 /* PreparationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5348866280458CD00A0B292 /* PreparationDetailViewController.swift */; };
+		B534886B280458CD00A0B292 /* PreparationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5348867280458CD00A0B292 /* PreparationViewController.swift */; };
+		B534886E2804612700A0B292 /* MilestoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B534886C2804612700A0B292 /* MilestoneViewController.swift */; };
+		B534886F2804612700A0B292 /* MilestoneMealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B534886D2804612700A0B292 /* MilestoneMealTableViewCell.swift */; };
+		B53488712804634200A0B292 /* StepByStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53488702804634200A0B292 /* StepByStepViewController.swift */; };
 		B5DDFD8427FEA08D00DCF55A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDFD8327FEA08D00DCF55A /* AppDelegate.swift */; };
 		B5DDFD8627FEA08D00DCF55A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDFD8527FEA08D00DCF55A /* SceneDelegate.swift */; };
 		B5DDFD8827FEA08D00DCF55A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDFD8727FEA08D00DCF55A /* ViewController.swift */; };
@@ -24,6 +34,16 @@
 		B53488582803BF4A00A0B292 /* Filter1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Filter1ViewController.swift; path = "../../Suniside-Jo/Suniside-Jo/Filter1ViewController.swift"; sourceTree = "<group>"; };
 		B53488592803BF4A00A0B292 /* Filter2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Filter2ViewController.swift; path = "../../Suniside-Jo/Suniside-Jo/Filter2ViewController.swift"; sourceTree = "<group>"; };
 		B534885A2803BF4A00A0B292 /* PageConfrimation1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageConfrimation1ViewController.swift; path = "../../Suniside-Jo/Suniside-Jo/PageConfrimation1ViewController.swift"; sourceTree = "<group>"; };
+		B534885E280428CB00A0B292 /* RecipeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeListViewController.swift; path = "../../Sunnysideup-Test-main/Sunnysideup Test/RecipeListViewController.swift"; sourceTree = "<group>"; };
+		B53488602804290500A0B292 /* StructureDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StructureDefinition.swift; path = "../../Sunnysideup-Test-main/Sunnysideup Test/StructureDefinition.swift"; sourceTree = "<group>"; };
+		B53488622804292E00A0B292 /* RecipeListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeListTableViewCell.swift; path = "../../Sunnysideup-Test-main/Sunnysideup Test/RecipeListTableViewCell.swift"; sourceTree = "<group>"; };
+		B5348864280458CC00A0B292 /* RecipePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipePageViewController.swift; path = "../../../Downloads/Mc1 2/Mc1/RecipePageViewController.swift"; sourceTree = "<group>"; };
+		B5348865280458CD00A0B292 /* IngredientListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientListViewController.swift; path = "../../../Downloads/Mc1 2/Mc1/IngredientListViewController.swift"; sourceTree = "<group>"; };
+		B5348866280458CD00A0B292 /* PreparationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreparationDetailViewController.swift; path = "../../../Downloads/Mc1 2/Mc1/PreparationDetailViewController.swift"; sourceTree = "<group>"; };
+		B5348867280458CD00A0B292 /* PreparationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreparationViewController.swift; path = "../../../Downloads/Mc1 2/Mc1/PreparationViewController.swift"; sourceTree = "<group>"; };
+		B534886C2804612700A0B292 /* MilestoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MilestoneViewController.swift; path = "../../../Downloads/Sunnysideup-Test-main-2/Sunnysideup Test/MilestoneViewController.swift"; sourceTree = "<group>"; };
+		B534886D2804612700A0B292 /* MilestoneMealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MilestoneMealTableViewCell.swift; path = "../../../Downloads/Sunnysideup-Test-main-2/Sunnysideup Test/MilestoneMealTableViewCell.swift"; sourceTree = "<group>"; };
+		B53488702804634200A0B292 /* StepByStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StepByStepViewController.swift; path = ../../MiniChallenge1/MiniChallenge1/StepByStepViewController.swift; sourceTree = "<group>"; };
 		B5DDFD8027FEA08D00DCF55A /* SunnySideUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunnySideUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DDFD8327FEA08D00DCF55A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5DDFD8527FEA08D00DCF55A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +95,16 @@
 				B53488582803BF4A00A0B292 /* Filter1ViewController.swift */,
 				B53488592803BF4A00A0B292 /* Filter2ViewController.swift */,
 				B534885A2803BF4A00A0B292 /* PageConfrimation1ViewController.swift */,
+				B534885E280428CB00A0B292 /* RecipeListViewController.swift */,
+				B53488602804290500A0B292 /* StructureDefinition.swift */,
+				B5348865280458CD00A0B292 /* IngredientListViewController.swift */,
+				B5348866280458CD00A0B292 /* PreparationDetailViewController.swift */,
+				B5348867280458CD00A0B292 /* PreparationViewController.swift */,
+				B5348864280458CC00A0B292 /* RecipePageViewController.swift */,
+				B53488622804292E00A0B292 /* RecipeListTableViewCell.swift */,
+				B534886D2804612700A0B292 /* MilestoneMealTableViewCell.swift */,
+				B534886C2804612700A0B292 /* MilestoneViewController.swift */,
+				B53488702804634200A0B292 /* StepByStepViewController.swift */,
 			);
 			path = SunnySideUp;
 			sourceTree = "<group>";
@@ -151,11 +181,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B534885B2803BF4A00A0B292 /* Filter1ViewController.swift in Sources */,
+				B53488712804634200A0B292 /* StepByStepViewController.swift in Sources */,
+				B5348869280458CD00A0B292 /* IngredientListViewController.swift in Sources */,
+				B53488632804292E00A0B292 /* RecipeListTableViewCell.swift in Sources */,
 				B5DDFD8827FEA08D00DCF55A /* ViewController.swift in Sources */,
+				B53488612804290500A0B292 /* StructureDefinition.swift in Sources */,
 				B534885C2803BF4A00A0B292 /* Filter2ViewController.swift in Sources */,
 				B53488572803BF3D00A0B292 /* WelcomeViewController.swift in Sources */,
+				B534885F280428CB00A0B292 /* RecipeListViewController.swift in Sources */,
 				B5DDFD8427FEA08D00DCF55A /* AppDelegate.swift in Sources */,
+				B534886A280458CD00A0B292 /* PreparationDetailViewController.swift in Sources */,
+				B534886F2804612700A0B292 /* MilestoneMealTableViewCell.swift in Sources */,
+				B5348868280458CD00A0B292 /* RecipePageViewController.swift in Sources */,
 				B5DDFD8627FEA08D00DCF55A /* SceneDelegate.swift in Sources */,
+				B534886E2804612700A0B292 /* MilestoneViewController.swift in Sources */,
+				B534886B280458CD00A0B292 /* PreparationViewController.swift in Sources */,
 				B534885D2803BF4A00A0B292 /* PageConfrimation1ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
