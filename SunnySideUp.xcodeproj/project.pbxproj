@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6053933F27FEA75900C5BC2D /* MilestoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6053933E27FEA75900C5BC2D /* MilestoneViewController.swift */; };
+		B53488572803BF3D00A0B292 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53488562803BF3D00A0B292 /* WelcomeViewController.swift */; };
+		B534885B2803BF4A00A0B292 /* Filter1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53488582803BF4A00A0B292 /* Filter1ViewController.swift */; };
+		B534885C2803BF4A00A0B292 /* Filter2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53488592803BF4A00A0B292 /* Filter2ViewController.swift */; };
+		B534885D2803BF4A00A0B292 /* PageConfrimation1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B534885A2803BF4A00A0B292 /* PageConfrimation1ViewController.swift */; };
 		B5DDFD8427FEA08D00DCF55A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDFD8327FEA08D00DCF55A /* AppDelegate.swift */; };
 		B5DDFD8627FEA08D00DCF55A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDFD8527FEA08D00DCF55A /* SceneDelegate.swift */; };
 		B5DDFD8827FEA08D00DCF55A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDFD8727FEA08D00DCF55A /* ViewController.swift */; };
@@ -17,7 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6053933E27FEA75900C5BC2D /* MilestoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneViewController.swift; sourceTree = "<group>"; };
+		B53488562803BF3D00A0B292 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = "../../Suniside-Jo/Suniside-Jo/WelcomeViewController.swift"; sourceTree = "<group>"; };
+		B53488582803BF4A00A0B292 /* Filter1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Filter1ViewController.swift; path = "../../Suniside-Jo/Suniside-Jo/Filter1ViewController.swift"; sourceTree = "<group>"; };
+		B53488592803BF4A00A0B292 /* Filter2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Filter2ViewController.swift; path = "../../Suniside-Jo/Suniside-Jo/Filter2ViewController.swift"; sourceTree = "<group>"; };
+		B534885A2803BF4A00A0B292 /* PageConfrimation1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageConfrimation1ViewController.swift; path = "../../Suniside-Jo/Suniside-Jo/PageConfrimation1ViewController.swift"; sourceTree = "<group>"; };
 		B5DDFD8027FEA08D00DCF55A /* SunnySideUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunnySideUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DDFD8327FEA08D00DCF55A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5DDFD8527FEA08D00DCF55A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,11 +67,14 @@
 				B5DDFD8327FEA08D00DCF55A /* AppDelegate.swift */,
 				B5DDFD8527FEA08D00DCF55A /* SceneDelegate.swift */,
 				B5DDFD8727FEA08D00DCF55A /* ViewController.swift */,
-				6053933E27FEA75900C5BC2D /* MilestoneViewController.swift */,
 				B5DDFD8927FEA08D00DCF55A /* Main.storyboard */,
 				B5DDFD8C27FEA08E00DCF55A /* Assets.xcassets */,
 				B5DDFD8E27FEA08E00DCF55A /* LaunchScreen.storyboard */,
 				B5DDFD9127FEA08E00DCF55A /* Info.plist */,
+				B53488562803BF3D00A0B292 /* WelcomeViewController.swift */,
+				B53488582803BF4A00A0B292 /* Filter1ViewController.swift */,
+				B53488592803BF4A00A0B292 /* Filter2ViewController.swift */,
+				B534885A2803BF4A00A0B292 /* PageConfrimation1ViewController.swift */,
 			);
 			path = SunnySideUp;
 			sourceTree = "<group>";
@@ -141,10 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B534885B2803BF4A00A0B292 /* Filter1ViewController.swift in Sources */,
 				B5DDFD8827FEA08D00DCF55A /* ViewController.swift in Sources */,
+				B534885C2803BF4A00A0B292 /* Filter2ViewController.swift in Sources */,
+				B53488572803BF3D00A0B292 /* WelcomeViewController.swift in Sources */,
 				B5DDFD8427FEA08D00DCF55A /* AppDelegate.swift in Sources */,
 				B5DDFD8627FEA08D00DCF55A /* SceneDelegate.swift in Sources */,
-				6053933F27FEA75900C5BC2D /* MilestoneViewController.swift in Sources */,
+				B534885D2803BF4A00A0B292 /* PageConfrimation1ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
