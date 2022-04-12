@@ -379,7 +379,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idF-Vg-rL9" userLabel="Image Container">
                                                                     <rect key="frame" x="212" y="4" width="120" height="120"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempe_mendol" translatesAutoresizingMaskIntoConstraints="NO" id="S6H-kD-fkh">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempe-mendol" translatesAutoresizingMaskIntoConstraints="NO" id="S6H-kD-fkh">
                                                                             <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="120" id="cNd-FS-wsX"/>
@@ -1278,6 +1278,7 @@
         <image name="leaf" catalog="system" width="128" height="109"/>
         <image name="middle-age-chef-woman-smiling-happily-cheerfully-waving-hand-welcoming-greeting-you-saying-goodbye_1194-360593" width="1800" height="1200"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="tempe-mendol" width="1080" height="1080"/>
         <image name="tempe_mendol" width="1080" height="1080"/>
         <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">

@@ -133,6 +133,7 @@ extension RecipeListViewController: UITableViewDataSource {
         cell.RecipeTimeCalorieLabel.text = "\(cookTime[tableRow]) Mins | \(calories[tableRow]) Kcal"
         cell.RecipeDescriptionLabel.text = recipeDesc[tableRow]
 //        cell.RecipeImageView.image = UIImage(named: recipe.menuImageName!)
+        cell.RecipeImageView.image = UIImage(named: imgString[tableRow])
         cell.RecipeDetailsButtonTapped = {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "RecipePageView") as! RecipePageViewController
             controller.modalPresentationStyle = .fullScreen

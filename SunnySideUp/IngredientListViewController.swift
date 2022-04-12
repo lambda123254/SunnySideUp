@@ -20,7 +20,9 @@ class IngredientListViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var guideText: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    
     @IBAction func nextButton(_ sender: Any) {
+        
         let controller =
         storyboard?.instantiateViewController(withIdentifier: "PreparationView") as! PreparationViewController
         controller.modalPresentationStyle = .fullScreen
@@ -84,15 +86,7 @@ class IngredientListViewController: UIViewController, UITableViewDelegate, UITab
         item.isChecked = !item.isChecked
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }
-    //hide Nav Bar
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationController?.setNavigationBarHidden(true, animated: animated)
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        navigationController?.setNavigationBarHidden(false, animated: animated)
-//    }
+    
+
 
 }
