@@ -54,8 +54,8 @@ class RecipeListTableViewCell: UITableViewCell {
         }
     }
     @IBOutlet weak var RecipeDetailsButton: UIButton!
-    
-    
+        
+    @IBOutlet weak var RecipeIdLabel: UILabel!
     @IBAction func onClick(_ sender: UIButton) {
         RecipeDetailsButtonTapped?()
     }

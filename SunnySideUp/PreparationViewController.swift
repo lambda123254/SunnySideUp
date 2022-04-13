@@ -60,7 +60,6 @@ class PreparationViewController: UIViewController {
         guideLabel.text = "Now, it is time to prepare the ingredients before cooking."
         tableView.delegate = self
         tableView.dataSource = self
-        print(recipeData.weeklyRecipeArray)
 
 
     }

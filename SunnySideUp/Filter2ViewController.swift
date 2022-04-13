@@ -39,15 +39,34 @@ class Filter2ViewController: UIViewController {
             print("edit")
         }))
         alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: { action in print("continue")
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "RecipeListView") as! RecipeListViewController
-            
-            controller.modalPresentationStyle = .fullScreen
-            
-            controller.modalTransitionStyle = .crossDissolve
-            controller.cookTimeRange = self.cookTimeRange
-            controller.eatingFreq = self.eatingFreq
+            let cookTimeRangeMin = self.cookTimeRange / 100
+            let cookTimeRangeMax = self.cookTimeRange % 100
+            for i in 0 ..< recipeData.recipeArray.count {
+                if recipeData.recipeArray[i].cookTime >= cookTimeRangeMin && recipeData.recipeArray[i].cookTime <= cookTimeRangeMax {
+                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "RecipeListView") as! RecipeListViewController
                     
-            self.present(controller, animated: true)
+                    controller.modalPresentationStyle = .fullScreen
+                    
+                    controller.modalTransitionStyle = .crossDissolve
+                    controller.cookTimeRange = self.cookTimeRange
+                    controller.eatingFreq = self.eatingFreq
+                            
+                    self.present(controller, animated: true)
+                }
+                else {
+                    self.showAlertNoData()
+                }
+            }
+            
+        }))
+        
+        present(alert, animated: true)
+    }
+    
+    func showAlertNoData(){
+        let alert = UIAlertController(title: "No Data", message: "There is no recipe which suitable with your criteria", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Back", style: .cancel, handler: { action in
+            
         }))
         
         present(alert, animated: true)
