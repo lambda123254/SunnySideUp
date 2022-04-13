@@ -50,6 +50,7 @@ class IngredientListViewController: UIViewController, UITableViewDelegate, UITab
         tableView.delegate = self
         tableView.dataSource = self
         
+        
         for i in 0...(recipeData.weeklyRecipeArray.count)-1 {
             weeklyrecipeID.append(recipeData.weeklyRecipeArray[i].recipeId)
         }
@@ -93,6 +94,12 @@ class IngredientListViewController: UIViewController, UITableViewDelegate, UITab
         }
         print(ingredientNameFiltered)
         ingredientFilter = unique(source: ingredient)
+        
+        for i in ingredientFilter {
+            if ingredientFilter.contains("Garlic"){
+                prefixArr.append("cloves")
+            }
+        }
     }
     
     //table
@@ -101,9 +108,55 @@ class IngredientListViewController: UIViewController, UITableViewDelegate, UITab
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-//        cell.textLabel?.text = "\(Int(weeklyAmount[indexPath.row])) \(ingredientFilter[indexPath.row])"
-        cell.textLabel?.text = "\(ingredientFilter[indexPath.row])"
+        var unit = ""
+        if ingredientFilter[indexPath.row].contains("Water") {unit = "mL"}
+        else if ingredientFilter[indexPath.row].contains("Tempeh Seasoning") {unit = "sachet"}
+        else if ingredientFilter[indexPath.row].contains("Chicken Breast") {unit = "grams"}
+        else if ingredientFilter[indexPath.row].contains("Tempeh") {unit = "grams"}
+        else if ingredientFilter[indexPath.row].contains("White Onion") {unit = ""}
+        else if ingredientFilter[indexPath.row].contains("Green Onion") {unit = "tbsp"}
+        else if ingredientFilter[indexPath.row].contains("Vegetable Oil") {unit = "tbsp"}
+        else if ingredientFilter[indexPath.row].contains("Soy Sauce") {unit = "tbsp"}
+        else if ingredientFilter[indexPath.row].contains("Cooked Rice") {unit = "cups"}
+        else if ingredientFilter[indexPath.row].contains("Sesame Oil") {unit = "tbsp"}
+
+        else if ingredientFilter[indexPath.row].contains("Frozen Peas and Carrots") {unit = ""}
+        else if ingredientFilter[indexPath.row].contains("Egg") {unit = ""}
+        else if ingredientFilter[indexPath.row].contains("Garlic") {unit = "cloves"}
+        else if ingredientFilter[indexPath.row].contains("Water") {unit = "ml"}
+        else if ingredientFilter[indexPath.row].contains("Galangal Root") {unit = "cm"}
+
+        else if ingredientFilter[indexPath.row].contains("Bay Leaf") {unit = ""}
+        else if ingredientFilter[indexPath.row].contains("Sweet Soy Sauce") {unit = "tbsp"}
+        else if ingredientFilter[indexPath.row].contains("Salt") {unit = "tsp"}
+        else if ingredientFilter[indexPath.row].contains("Sugar") {unit = "tsp"}
+
+        else if ingredientFilter[indexPath.row].contains("Pepper") {unit = ""}
+        else if ingredientFilter[indexPath.row].contains("Chicken Broth") {unit = "ml"}
+        else if ingredientFilter[indexPath.row].contains("Anchovy") {unit = "ons"}
+        else if ingredientFilter[indexPath.row].contains("Chili Pepper") {unit = ""}
+
+        else if ingredientFilter[indexPath.row].contains("Shallot") {unit = "cloves"}
+        else if ingredientFilter[indexPath.row].contains("Teriyaki Sauce") {unit = "ml"}
+        else if ingredientFilter[indexPath.row].contains("Lime Leaf") {unit = ""}
+        else if ingredientFilter[indexPath.row].contains("Red Cayenne Pepper") {unit = ""}
+
+        else if ingredientFilter[indexPath.row].contains("Aromatic Ginger") {unit = "cm"}
+        else if ingredientFilter[indexPath.row].contains("Mushroom broth") {unit = "tsp"}
+        else if ingredientFilter[indexPath.row].contains("Coriander") {unit = "tsp"}
+        else if ingredientFilter[indexPath.row].contains("Onion") {unit = "tbsp"}
+
+        else if ingredientFilter[indexPath.row].contains("Broccoli") {unit = "cups"}
+        else if ingredientFilter[indexPath.row].contains("Cheddar") {unit = "cups"}
+        else if ingredientFilter[indexPath.row].contains("Olive Oil") {unit = "tbsp"}
+        else if ingredientFilter[indexPath.row].contains("Salted Egg Yolk") {unit = ""}
+        else if ingredientFilter[indexPath.row].contains("Wheat Flour") {unit = "tbsp"}
+        else if ingredientFilter[indexPath.row].contains("All Purpose Flour") {unit = ""}
+        else if ingredientFilter[indexPath.row].contains("Sago Flour") {unit = "tbsp"}
+        else if ingredientFilter[indexPath.row].contains("Full Cream Milk") {unit = "cup"}
+
+        cell.textLabel?.text = "\(forTrailingZero(temp: weeklyAmount[indexPath.row])) \(unit) of \(ingredientFilter[indexPath.row])"
+//        cell.textLabel?.text = "\(ingredientFilter[indexPath.row])"
 
 //        if checklist == true {
 //            cell.accessoryType = .checkmark
@@ -156,5 +209,10 @@ class IngredientListViewController: UIViewController, UITableViewDelegate, UITab
             }
             return buffer
         }
+    
+    func forTrailingZero(temp: Double) -> String {
+        var tempVar = String(format: "%g", temp)
+        return tempVar
+    }
 
 }
