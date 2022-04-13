@@ -159,8 +159,7 @@ extension MilestoneViewController: UITableViewDataSource {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "StepByStepView") as! StepByStepViewController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .crossDissolve
-            
-            controller.index = menu.recipeId
+
             controller.recipe = recipeData.recipeArray[menu.recipeId - 1]
             
             self.present(controller, animated: true)

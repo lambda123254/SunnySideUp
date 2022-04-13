@@ -16,29 +16,13 @@ struct StepByStep {
     var tickTimer: Int
 }
 
-struct Recipe{
-    let recipeId: Int
-    var stepByStep: [StepByStep]
-}
 
 class StepByStepViewController: UIViewController {
     var stepCount = 0
 //    var dataList = [DemoData]()
     
-    var index = -1
     var recipe:Recipes? = nil
-//    var recipe = recipeData.recipeArray[index - 1]
     
-//    var recipe : [Recipe] = [
-//        Recipe(recipeId: 0, stepByStep: [
-//            StepByStep(stepOrder: 1, stepDesc: "Saute onions, galangal, and salam until the aroma comes out.", isTimer: false, cookTime: 0, imageString: "Basic-Cooking-Methods", tickTimer: 0),
-//            StepByStep(stepOrder: 2, stepDesc: "Add the tempeh and add soy sauce, salt and sugar", isTimer: false, cookTime: 0, imageString: "191009-cooking-vegetables-al-1422", tickTimer: 0),
-//            StepByStep(stepOrder: 2, stepDesc: "Add sauce and boi it is cooked", isTimer: true, cookTime: 0, imageString: "191009-cooking-vegetables-al-1422", tickTimer: 67),
-//        ])
-//    ]
-    
-
-
     @IBOutlet weak var imageVIew: UIImageView!
     @IBOutlet weak var stepDesc: UILabel!
     @IBOutlet weak var stepNumber: UILabel!
