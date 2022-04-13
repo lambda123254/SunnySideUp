@@ -55,15 +55,24 @@ class IngredientListViewController: UIViewController, UITableViewDelegate, UITab
         checkListItem(title: $0)
     })
 
-    var vc = RecipeListViewController()
+//    var id = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        var count = 0
         titleLabel.text = "Step 4"
         guideText.text = "Here are the ingredients you need to prepare for this week. Don't forget to check all the ingredients before starting the preparation!"
         tableView.delegate = self
         tableView.dataSource = self
-        print(recipeData.weeklyRecipeArray)
-        
+//        for i in 0 ..< recipeData.weeklyRecipeArray.count {
+//            id.append(recipeData.weeklyRecipeArray[i].recipeId)
+//
+////            if recipeData.weeklyRecipeArray[i].recipeId
+//            for j in 0 ..< 2 {
+//                print(recipeData.recipeArray[recipeData.weeklyRecipeArray[i].recipeId - 1].ingredient![j].title)
+//            }
+//            count += 1
+//        }
+//
     }
     
     //table
