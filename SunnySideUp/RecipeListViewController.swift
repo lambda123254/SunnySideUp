@@ -50,12 +50,14 @@ class RecipeListViewController: ViewController {
     var calories = [Int]()
     var imgString = [String]()
     var recipeDesc = [String]()
+    var recipeId = [Int]()
     var weeklyRecipe : [WeeklyRecipe] = []
     var cookTimeRange = 0
     
     var eatingFreq = 0
     var tableRow = 0
     var count = 0
+    var countDay = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,20 +70,29 @@ class RecipeListViewController: ViewController {
                 calories.append(recipeData.recipeArray[i].calories)
                 imgString.append(recipeData.recipeArray[i].imgString)
                 recipeDesc.append(recipeData.recipeArray[i].recipeDesc)
-                for i in 0 ..< 7{
-//                    weeklyRecipe.append(WeeklyRecipe(dayNumber: i + 1, recipeId: recipeData.recipeArray[count].recipeId))
-                    recipeData.setWeeklyRecipe(dayNumber: i + 1, recipeId: recipeData.recipeArray[count].recipeId)
-                    count += 1
-                    
-
-                    if count >= recipeData.recipeArray.count {
-                        count = 0
+                recipeId.append(recipeData.recipeArray[i].recipeId)
+                if i == 0 {
+                    for j in 0 ..< 7{
+                        for k in 0 ..< eatingFreq {
+                            recipeData.setWeeklyRecipe(dayNumber: count + 1, recipeId: recipeData.recipeArray[Int.random(in: i ..< recipeData.recipeArray.count)].recipeId)
+                            
+                        }
+                        count += 1
+                        
+                        if count >= 7 {
+                            count = 0
+                        }
+                        
                     }
                 }
+                
             }
             
         }
-        
+        print(recipeId)
+
+        print(recipeData.weeklyRecipeArray)
+
         AllRecipeTableView.dataSource = self
         AllRecipeTableView.separatorStyle = .none
         AllRecipeTableView.showsVerticalScrollIndicator = false
@@ -119,7 +130,7 @@ extension RecipeListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return eatingFreq
         
     }
     
@@ -132,25 +143,27 @@ extension RecipeListViewController: UITableViewDataSource {
         cell.RecipeNameLabel.text = recipeName[tableRow]
         cell.RecipeTimeCalorieLabel.text = "\(cookTime[tableRow]) Mins | \(calories[tableRow]) Kcal"
         cell.RecipeDescriptionLabel.text = recipeDesc[tableRow]
+        cell.RecipeIdLabel.text = String(recipeId[tableRow])
 //        cell.RecipeImageView.image = UIImage(named: recipe.menuImageName!)
+        cell.RecipeImageView.image = UIImage(named: imgString[tableRow])
         cell.RecipeDetailsButtonTapped = {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "RecipePageView") as! RecipePageViewController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .crossDissolve
-
+            controller.index = cell.RecipeIdLabel.text!
             self.present(controller, animated: true)
         }
         tableRow += 1
         if tableRow >= recipeName.count {
             tableRow = 0
         }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //        return "Day \(String(describing: weeklyRecipes[section].dayNumber!))"
-
-        return "Day \(String(describing: recipeData.weeklyRecipeArray[section].dayNumber))"
+        return "Day \(countDay)"
 
     }
     
