@@ -6,102 +6,155 @@
 //
 
 import UIKit
-class checkListItem {
-    let title: String
-    var isChecked: Bool = false
+import Foundation
 
-    init(title: String){
-        self.title = title
-    }
-}
+class IngredientListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
-class IngredientListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var guideText: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    
     @IBAction func nextButton(_ sender: Any) {
+        
         let controller =
         storyboard?.instantiateViewController(withIdentifier: "PreparationView") as! PreparationViewController
         controller.modalPresentationStyle = .fullScreen
         controller.modalTransitionStyle = .crossDissolve
+        
+        if checkListArr.contains(false) {
+            print("error")
+        }
+        else {
+        }
         present(controller, animated: true)
+
+        
     }
     
-    
-    let items: [checkListItem] = [
-        "1 Pound of Chicken Breast",
-        "10mL of Teriyaki Sauce",
-        "1 cup of Rice",
-        "300 grams tempeh",
-        "1 ons anchovy",
-        "5 red chili pepper",
-        "6 cloves garlic",
-        "3 cloves shallot",
-        "2 tbsp sago flour",
-        "½ cup full cream milk",
-        "1 sachet of fried tempeh seasoning",
-        "3 salted egg yolk",
-        "300 grams tempeh",
-        "1 ons anchovy",
-        "5 red chili pepper",
-        "6 cloves garlic",
-        "3 cloves shallot",
-        "2 tbsp sago flour",
-        "½ cup full cream milk",
-        "1 sachet of fried tempeh seasoning"
-
-    ].compactMap({
-        checkListItem(title: $0)
-    })
-
-//    var id = [Int]()
+    var ingredient: [String] = []
+    var checkListArr: [Bool] = []
+    var checklist = false
+    var weeklyrecipeID: [Int] = []
+    var weeklyingredientID: [Int] = []
+    var weeklyAmount: [Double] = []
+    var count = 0
+    var ingredientFilter: [String] = []
+    var unitArr: [String] = ["gram", "mL", "tbsp", "tsp", "cup", "clove"]
+    var prefixArr: [String] = []
+    var ingredientName: [String] = []
+    var ingredientNameFiltered: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        var count = 0
         titleLabel.text = "Step 4"
         guideText.text = "Here are the ingredients you need to prepare for this week. Don't forget to check all the ingredients before starting the preparation!"
         tableView.delegate = self
         tableView.dataSource = self
-//        for i in 0 ..< recipeData.weeklyRecipeArray.count {
-//            id.append(recipeData.weeklyRecipeArray[i].recipeId)
-//
-////            if recipeData.weeklyRecipeArray[i].recipeId
-//            for j in 0 ..< 2 {
-//                print(recipeData.recipeArray[recipeData.weeklyRecipeArray[i].recipeId - 1].ingredient![j].title)
-//            }
-//            count += 1
-//        }
-//
+        
+        for i in 0...(recipeData.weeklyRecipeArray.count)-1 {
+            weeklyrecipeID.append(recipeData.weeklyRecipeArray[i].recipeId)
+        }
+        
+        for i in 0...(weeklyrecipeID.count)-1 {
+            for j in 0...(recipeData.recipeArray[weeklyrecipeID[i] - 1].ingredient!.count-1) {
+                weeklyingredientID.append(recipeData.recipeArray[weeklyrecipeID[i] - 1].ingredient![j].ingredientId)
+                weeklyAmount.append(recipeData.recipeArray[weeklyrecipeID[i] - 1].ingredient![j].amount)
+            }
+        }
+        
+        for i in 0...(weeklyingredientID.count-1){
+            for j in 0...(recipeData.ingredientArray.count-1){
+                if weeklyingredientID[i] == recipeData.ingredientArray[j].ingredientId {
+                    print(recipeData.ingredientArray[j].title)
+                    ingredient.append(recipeData.ingredientArray[j].title)
+                }
+            }
+        }
+        for i in 0...(weeklyrecipeID.count-1){
+            for j in 0...(recipeData.recipeArray[weeklyrecipeID[i] - 1].ingredient!.count-1) {
+                ingredientName.append(recipeData.recipeArray[weeklyrecipeID[i] - 1].ingredient![j].title)
+            }
+        }
+        
+//        print(weeklyingredientID)
+//        print(weeklyingredientID.count)
+//        print(ingredient)
+//        print(ingredient.count)
+//        print(weeklyAmount)
+        print(ingredient[0])
+        print(ingredientName)
+        
+        for i in 0...(ingredient.count-1){
+            checkListArr.append(false)
+        }
+        for i in 0...(ingredientName.count-1){
+            if ingredientName[i].contains(ingredient[i]){
+                ingredientNameFiltered.append(ingredientName[i])
+            }
+        }
+        print(ingredientNameFiltered)
+        ingredientFilter = unique(source: ingredient)
     }
     
     //table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return ingredientFilter.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = items[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = item.title
-        cell.accessoryType = item.isChecked ? .checkmark : .none
+        
+//        cell.textLabel?.text = "\(Int(weeklyAmount[indexPath.row])) \(ingredientFilter[indexPath.row])"
+        cell.textLabel?.text = "\(ingredientFilter[indexPath.row])"
+
+//        if checklist == true {
+//            cell.accessoryType = .checkmark
+//            checklist = false
+////            count += 1
+//        }
+//        else{
+//            cell.accessoryType = .none
+////            count -= 1
+//        }
+        if checkListArr[indexPath.row] == true {
+            cell.accessoryType = .checkmark
+            checkListArr[indexPath.row] = true
+        }
+        else {
+            cell.accessoryType = .none
+        }
+        
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let item = items[indexPath.row]
-        item.isChecked = !item.isChecked
-        tableView.reloadRows(at: [indexPath], with: .automatic)
+//        if checklist == false {
+//            checklist = true
+//        }
+//        else {
+//            checklist = false
+//        }
+        
+        if checkListArr[indexPath.row] == false {
+            checkListArr[indexPath.row] = true
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        else{
+            checkListArr[indexPath.row] = false
+            
+        }
+        
     }
-    //hide Nav Bar
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationController?.setNavigationBarHidden(true, animated: animated)
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        navigationController?.setNavigationBarHidden(false, animated: animated)
-//    }
+    
+    func unique<S : Sequence, T : Hashable>(source: S) -> [T] where S.Iterator.Element == T {
+            var buffer = [T]()
+            var added = Set<T>()
+            for elem in source {
+                if !added.contains(elem) {
+                    buffer.append(elem)
+                    added.insert(elem)
+                }
+            }
+            return buffer
+        }
 
 }

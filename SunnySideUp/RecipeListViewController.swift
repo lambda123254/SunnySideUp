@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecipeListViewController: ViewController {
+class RecipeListViewController: UIViewController {
     
 //    var weeklyRecipes: [OneDayMenu] = [
 //        OneDayMenu(dayNumber: 1,
@@ -51,9 +51,8 @@ class RecipeListViewController: ViewController {
     var imgString = [String]()
     var recipeDesc = [String]()
     var recipeId = [Int]()
-    var weeklyRecipe : [WeeklyRecipe] = []
     var cookTimeRange = 0
-    
+    var dayNumberArr = [1,2,3,4,5,6,7]
     var eatingFreq = 0
     var tableRow = 0
     var count = 0
@@ -77,22 +76,23 @@ class RecipeListViewController: ViewController {
                             recipeData.setWeeklyRecipe(dayNumber: count + 1, recipeId: recipeData.recipeArray[Int.random(in: i ..< recipeData.recipeArray.count)].recipeId)
                             
                         }
-                        count += 1
-                        
-                        if count >= 7 {
-                            count = 0
+                            count += 1
+
+                            if count >= 7 {
+                                count = 0
                         }
                         
+
+ 
                     }
                 }
                 
             }
             
         }
-        print(recipeId)
-
         print(recipeData.weeklyRecipeArray)
-
+        print(recipeData.weeklyRecipeArray.count)
+        print(dayNumberArr)
         AllRecipeTableView.dataSource = self
         AllRecipeTableView.separatorStyle = .none
         AllRecipeTableView.showsVerticalScrollIndicator = false
@@ -163,7 +163,7 @@ extension RecipeListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //        return "Day \(String(describing: weeklyRecipes[section].dayNumber!))"
-        return "Day \(countDay)"
+        return "Day \(dayNumberArr[section])"
 
     }
     

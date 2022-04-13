@@ -34,6 +34,7 @@ class Filter2ViewController: UIViewController {
     }
     
     func showAlert() {
+        var count = 0
         let alert = UIAlertController(title: "Are you sure to continue?", message: "If you are already sure, please continue.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Edit", style: .cancel, handler: { action in
             print("edit")
@@ -43,19 +44,24 @@ class Filter2ViewController: UIViewController {
             let cookTimeRangeMax = self.cookTimeRange % 100
             for i in 0 ..< recipeData.recipeArray.count {
                 if recipeData.recipeArray[i].cookTime >= cookTimeRangeMin && recipeData.recipeArray[i].cookTime <= cookTimeRangeMax {
-                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "RecipeListView") as! RecipeListViewController
-                    
-                    controller.modalPresentationStyle = .fullScreen
-                    
-                    controller.modalTransitionStyle = .crossDissolve
-                    controller.cookTimeRange = self.cookTimeRange
-                    controller.eatingFreq = self.eatingFreq
-                            
-                    self.present(controller, animated: true)
+                    count += 1
                 }
                 else {
                     self.showAlertNoData()
+                    break
                 }
+            }
+            
+            if count > 0 {
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "RecipeListView") as! RecipeListViewController
+                
+                controller.modalPresentationStyle = .fullScreen
+                
+                controller.modalTransitionStyle = .crossDissolve
+                controller.cookTimeRange = self.cookTimeRange
+                controller.eatingFreq = self.eatingFreq
+                        
+                self.present(controller, animated: true)
             }
             
         }))
