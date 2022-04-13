@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bap-Ta-Bj2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Td9-z1-tT3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -1091,6 +1091,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wrg-fA-Eg8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1809" y="994"/>
+        </scene>
+        <!--Congrats View Controller-->
+        <scene sceneID="ZFB-oG-7QD">
+            <objects>
+                <viewController storyboardIdentifier="CongratsView" id="Td9-z1-tT3" customClass="CongratsViewController" customModule="SunnySideUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IjV-N4-dfQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XP-Tj-UyH" userLabel="Done Btn">
+                                <rect key="frame" x="130" y="812" width="127" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NVJ-7B-5ub"/>
+                                    <constraint firstAttribute="width" constant="127" id="fub-h7-Eu3"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Done">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="baseBackgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nextBtnPressed:" destination="Td9-z1-tT3" eventType="touchUpInside" id="is1-l9-ovj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tj1-1c-Ea1">
+                                <rect key="frame" x="50" y="145" width="300" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="B7i-dW-pXk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2A-e2-JmA">
+                                <rect key="frame" x="55" y="185" width="305" height="167"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="h2A-e2-JmA" secondAttribute="height" multiplier="113:31" id="R4H-oD-sTW"/>
+                                </constraints>
+                                <string key="text">You’ve done your meal for today!
+Please looking forward for your next meal</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Basic-Cooking-Methods" translatesAutoresizingMaskIntoConstraints="NO" id="whV-N6-1yR">
+                                <rect key="frame" x="67" y="339" width="280" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="whV-N6-1yR" secondAttribute="height" multiplier="1:1" id="VZp-hD-8Gq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="n9l-RF-tGP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2XP-Tj-UyH" firstAttribute="leading" secondItem="n9l-RF-tGP" secondAttribute="leading" constant="130" id="QHj-3z-m7t"/>
+                            <constraint firstItem="whV-N6-1yR" firstAttribute="leading" secondItem="n9l-RF-tGP" secondAttribute="leading" constant="67" id="QIp-dI-Yln"/>
+                            <constraint firstItem="tj1-1c-Ea1" firstAttribute="leading" secondItem="n9l-RF-tGP" secondAttribute="leading" constant="50" id="SPu-PH-mtj"/>
+                            <constraint firstItem="h2A-e2-JmA" firstAttribute="leading" secondItem="n9l-RF-tGP" secondAttribute="leading" constant="37" id="apk-of-56C"/>
+                            <constraint firstItem="n9l-RF-tGP" firstAttribute="trailing" secondItem="h2A-e2-JmA" secondAttribute="trailing" constant="38" id="bQI-1j-fKN"/>
+                            <constraint firstItem="n9l-RF-tGP" firstAttribute="trailing" secondItem="whV-N6-1yR" secondAttribute="trailing" constant="67" id="fce-dq-wOX"/>
+                            <constraint firstItem="tj1-1c-Ea1" firstAttribute="top" secondItem="whV-N6-1yR" secondAttribute="bottom" constant="-474" id="vCz-Xh-kjh"/>
+                            <constraint firstItem="2XP-Tj-UyH" firstAttribute="bottom" secondItem="n9l-RF-tGP" secondAttribute="bottom" id="vwa-Mv-nIy"/>
+                            <constraint firstItem="h2A-e2-JmA" firstAttribute="top" secondItem="tj1-1c-Ea1" secondAttribute="top" constant="40" id="wUG-AG-ccB"/>
+                            <constraint firstItem="tj1-1c-Ea1" firstAttribute="top" secondItem="n9l-RF-tGP" secondAttribute="top" constant="101" id="zDr-iu-vgV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="CongratsMenuImageView" destination="whV-N6-1yR" id="4bT-Eb-mA7"/>
+                        <outlet property="CongratsMessageLabel" destination="h2A-e2-JmA" id="tnG-ua-SAD"/>
+                        <outlet property="CongratsTitleLabel" destination="tj1-1c-Ea1" id="rq1-Fg-Tcv"/>
+                        <outlet property="doneBtn" destination="2XP-Tj-UyH" id="LtK-A8-j2h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iVa-5a-Dz1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="257.97101449275362" y="1676.7857142857142"/>
         </scene>
         <!--Recipe Page View Controller-->
         <scene sceneID="Grh-x3-257">
