@@ -243,7 +243,22 @@ class recipeData {
             
         ]
     
-    static var weeklyRecipeArray: [WeeklyRecipe] = []
+    static var weeklyRecipeArray: [WeeklyRecipe] = [
+        WeeklyRecipe(dayNumber: 1, recipeId: 1, status: 0),
+        WeeklyRecipe(dayNumber: 1, recipeId: 2, status: 0),
+        WeeklyRecipe(dayNumber: 2, recipeId: 3, status: 0),
+        WeeklyRecipe(dayNumber: 2, recipeId: 4, status: 0),
+        WeeklyRecipe(dayNumber: 3, recipeId: 5, status: 0),
+        WeeklyRecipe(dayNumber: 3, recipeId: 6, status: 0),
+        WeeklyRecipe(dayNumber: 4, recipeId: 1, status: 0),
+        WeeklyRecipe(dayNumber: 4, recipeId: 2, status: 0),
+        WeeklyRecipe(dayNumber: 5, recipeId: 3, status: 0),
+        WeeklyRecipe(dayNumber: 5, recipeId: 4, status: 0),
+        WeeklyRecipe(dayNumber: 6, recipeId: 5, status: 0),
+        WeeklyRecipe(dayNumber: 6, recipeId: 6, status: 0),
+        WeeklyRecipe(dayNumber: 7, recipeId: 1, status: 0),
+        WeeklyRecipe(dayNumber: 7, recipeId: 2, status: 0)
+    ]
     
     static func setWeeklyRecipe(dayNumber: Int, recipeId: Int){
         recipeData.weeklyRecipeArray.append(WeeklyRecipe(dayNumber: dayNumber, recipeId: recipeId, status: 0))

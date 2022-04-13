@@ -20,31 +20,31 @@ class MilestoneViewController: ViewController {
         Menu(menuTitle: "Resep abc", menuCookTime: "30 Mins", menuCalorie: "150 kcal", menuImageName: "tempe_salted_egg")
     ]
     
-    var oneWeekRecipe: [WeeklyRecipe] = [
-        WeeklyRecipe(dayNumber: 1, recipeId: 1, status: 0),
-        WeeklyRecipe(dayNumber: 1, recipeId: 2, status: 0),
-        WeeklyRecipe(dayNumber: 2, recipeId: 3, status: 0),
-        WeeklyRecipe(dayNumber: 2, recipeId: 4, status: 0),
-        WeeklyRecipe(dayNumber: 3, recipeId: 5, status: 0),
-        WeeklyRecipe(dayNumber: 3, recipeId: 6, status: 0),
-        WeeklyRecipe(dayNumber: 4, recipeId: 1, status: 0),
-        WeeklyRecipe(dayNumber: 4, recipeId: 2, status: 0),
-        WeeklyRecipe(dayNumber: 5, recipeId: 3, status: 0),
-        WeeklyRecipe(dayNumber: 5, recipeId: 4, status: 0),
-        WeeklyRecipe(dayNumber: 6, recipeId: 5, status: 0),
-        WeeklyRecipe(dayNumber: 6, recipeId: 6, status: 0),
-        WeeklyRecipe(dayNumber: 7, recipeId: 1, status: 0),
-        WeeklyRecipe(dayNumber: 7, recipeId: 2, status: 0),
-    ]
+//    var oneWeekRecipe:[WeeklyRecipe] = [
+//        WeeklyRecipe(dayNumber: 1, recipeId: 1, status: 0),
+//        WeeklyRecipe(dayNumber: 1, recipeId: 2, status: 0),
+//        WeeklyRecipe(dayNumber: 2, recipeId: 3, status: 0),
+//        WeeklyRecipe(dayNumber: 2, recipeId: 4, status: 0),
+//        WeeklyRecipe(dayNumber: 3, recipeId: 5, status: 0),
+//        WeeklyRecipe(dayNumber: 3, recipeId: 6, status: 0),
+//        WeeklyRecipe(dayNumber: 4, recipeId: 1, status: 0),
+//        WeeklyRecipe(dayNumber: 4, recipeId: 2, status: 0),
+//        WeeklyRecipe(dayNumber: 5, recipeId: 3, status: 0),
+//        WeeklyRecipe(dayNumber: 5, recipeId: 4, status: 0),
+//        WeeklyRecipe(dayNumber: 6, recipeId: 5, status: 0),
+//        WeeklyRecipe(dayNumber: 6, recipeId: 6, status: 0),
+//        WeeklyRecipe(dayNumber: 7, recipeId: 1, status: 0),
+//        WeeklyRecipe(dayNumber: 7, recipeId: 2, status: 0),
+//    ]
     
     @IBOutlet weak var MilestoneDay: UILabel!
     @IBOutlet weak var MilestoneDate: UILabel!
     @IBOutlet weak var MilestoneMealTableView: UITableView!
     
-    var statusArray = [[false, false, false], [false, false, false]]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("static:", recipeData.weeklyRecipeArray)
         
         MilestoneMealTableView.dataSource = self
         MilestoneDate.text = getDateLabel()
@@ -121,29 +121,30 @@ extension MilestoneViewController: UITableViewDataSource {
 //        cell.MilestoneMealCalorieLabel.text = menu.menuCalorie
         
         // data dummy 2
-        var menus: [Recipes] = []
+        var todayMenu:[WeeklyRecipe] = []
+        var todayRecipes:[Recipes] = []
         
-        for i in 0...oneWeekRecipe.count - 1 {
-            if oneWeekRecipe[i].dayNumber == 2 {
+        for i in 0...recipeData.weeklyRecipeArray.count - 1 {
+            if recipeData.weeklyRecipeArray[i].dayNumber == 1 {
                 for j in 0...recipeData.recipeArray.count - 1 {
-                    if oneWeekRecipe[i].recipeId == recipeData.recipeArray[j].recipeId {
-                        menus.append(recipeData.recipeArray[j])
+                    if recipeData.weeklyRecipeArray[i].recipeId == recipeData.recipeArray[j].recipeId {
+                        todayMenu.append(recipeData.weeklyRecipeArray[i])
+                        todayRecipes.append(recipeData.recipeArray[j])
                         break
                     }
                 }
             }
         }
+
         
-        print(menus)
-        print("count:", menus.count)
-        
-        let menu = menus[indexPath.row]
+        var theMenu = todayMenu[indexPath.row]
+        let theRecipe = todayRecipes[indexPath.row]
 
         cell.MilestoneMealNumber.text = "Meal \(indexPath.row + 1)"
-        cell.MilestoneMealImageView.image = UIImage(named: menu.imgString)
-        cell.MilestoneMealLabel.text = menu.recipeName
-        cell.MilestoneMealCookTimeLabel.text = "\(menu.cookTime) Mins"
-        cell.MilestoneMealCalorieLabel.text = "\(menu.calories) kcal"
+        cell.MilestoneMealImageView.image = UIImage(named: theRecipe.imgString)
+        cell.MilestoneMealLabel.text = theRecipe.recipeName
+        cell.MilestoneMealCookTimeLabel.text = "\(theRecipe.cookTime) Mins"
+        cell.MilestoneMealCalorieLabel.text = "\(theRecipe.calories) kcal"
         
         // test real data
 //        let menu = recipeData.recipeArray[indexPath.row]
@@ -154,20 +155,44 @@ extension MilestoneViewController: UITableViewDataSource {
 //        cell.MilestoneMealCookTimeLabel.text = "\(menu.cookTime) Mins"
 //        cell.MilestoneMealCalorieLabel.text = "\(menu.calories) kcal"
         
+        if theMenu.status == 1 {
+            // card become gray
+            cell.MilestoneStartButton.isEnabled = false
+            cell.MealContainerView.backgroundColor = UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 100/100)
+            cell.MealClippingView.backgroundColor = UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 100/100)
+            cell.MilestoneMealLabel.textColor = UIColor(red: 80/255, green: 80/255, blue: 82/255, alpha: 100/100)
+            cell.MilestoneMealCookTimeLabel.textColor = UIColor(red: 80/255, green: 80/255, blue: 82/255, alpha: 100/100)
+            cell.MilestoneMealCalorieLabel.textColor = UIColor(red: 80/255, green: 80/255, blue: 82/255, alpha: 100/100)
+            cell.MilestoneMealImageView.layer.opacity = 0.5
+            cell.MilestoneImageContainerView.layer.shadowOpacity = 0.2
+            cell.MealClippingView.layer.opacity = 0.8
+            cell.MilestoneStartButton.backgroundColor = UIColor(red: 80/255, green: 80/255, blue: 82/255, alpha: 20/100)
+        }
         
         cell.MilestoneStartButtonTapped = {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "StepByStepView") as! StepByStepViewController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .crossDissolve
-
-            controller.recipe = recipeData.recipeArray[menu.recipeId - 1]
+            
+            controller.menu = theMenu
+            controller.recipe = theRecipe
+            
+            // change the status
+            let dn = theMenu.dayNumber
+            let r = theMenu.recipeId
+            
+            for i in 0...recipeData.weeklyRecipeArray.count - 1 {
+                if (recipeData.weeklyRecipeArray[i].dayNumber == dn) && (recipeData.weeklyRecipeArray[i].recipeId == r) {
+                    recipeData.weeklyRecipeArray[i].status = 1
+                }
+            }
             
             self.present(controller, animated: true)
             
 //            // coba debugging
-            self.statusArray[0][indexPath.row] = true
-            print(self.statusArray)
-//
+//            self.statusArray[0][indexPath.row] = true
+//            print(self.statusArray)
+
 //            // card become gray
 //            cell.MilestoneStartButton.isEnabled = false
 //            cell.MealContainerView.backgroundColor = UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 100/100)

@@ -21,6 +21,7 @@ class StepByStepViewController: UIViewController {
     var stepCount = 0
 //    var dataList = [DemoData]()
     
+    var menu:WeeklyRecipe? = nil
     var recipe:Recipes? = nil
     
     @IBOutlet weak var imageVIew: UIImageView!
@@ -96,6 +97,8 @@ class StepByStepViewController: UIViewController {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "CongratsView") as! CongratsViewController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .crossDissolve
+            menu?.status = 1
+            print("menu di akhir: ", menu)
 
             self.present(controller, animated: true)
         }
