@@ -97,8 +97,6 @@ class StepByStepViewController: UIViewController {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "CongratsView") as! CongratsViewController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .crossDissolve
-            menu?.status = 1
-            print("menu di akhir: ", menu)
 
             self.present(controller, animated: true)
         }

@@ -189,21 +189,6 @@ extension MilestoneViewController: UITableViewDataSource {
             
             self.present(controller, animated: true)
             
-//            // coba debugging
-//            self.statusArray[0][indexPath.row] = true
-//            print(self.statusArray)
-
-//            // card become gray
-//            cell.MilestoneStartButton.isEnabled = false
-//            cell.MealContainerView.backgroundColor = UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 100/100)
-//            cell.MealClippingView.backgroundColor = UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 100/100)
-//            cell.MilestoneMealLabel.textColor = UIColor(red: 80/255, green: 80/255, blue: 82/255, alpha: 100/100)
-//            cell.MilestoneMealCookTimeLabel.textColor = UIColor(red: 80/255, green: 80/255, blue: 82/255, alpha: 100/100)
-//            cell.MilestoneMealCalorieLabel.textColor = UIColor(red: 80/255, green: 80/255, blue: 82/255, alpha: 100/100)
-//            cell.MilestoneMealImageView.layer.opacity = 0.5
-//            cell.MilestoneImageContainerView.layer.shadowOpacity = 0.2
-//            cell.MealClippingView.layer.opacity = 0.8
-//            cell.MilestoneStartButton.backgroundColor = UIColor(red: 80/255, green: 80/255, blue: 82/255, alpha: 20/100)
         }
         
         return cell
