@@ -104,6 +104,12 @@ class StepByStepViewController: UIViewController {
         else{
             print("done")
             stepCount = 0
+            
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "CongratsView") as! CongratsViewController
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .crossDissolve
+
+            self.present(controller, animated: true)
         }
 
     }
