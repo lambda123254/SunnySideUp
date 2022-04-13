@@ -20,6 +20,8 @@
 		B534886E2804612700A0B292 /* MilestoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B534886C2804612700A0B292 /* MilestoneViewController.swift */; };
 		B534886F2804612700A0B292 /* MilestoneMealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B534886D2804612700A0B292 /* MilestoneMealTableViewCell.swift */; };
 		B53488712804634200A0B292 /* StepByStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53488702804634200A0B292 /* StepByStepViewController.swift */; };
+		B53488732806B2C000A0B292 /* PreparationDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53488722806B2C000A0B292 /* PreparationDetailTableViewCell.swift */; };
+		B53488752806CE2800A0B292 /* CongratsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53488742806CE2800A0B292 /* CongratsViewController.swift */; };
 		B5DDFD8427FEA08D00DCF55A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDFD8327FEA08D00DCF55A /* AppDelegate.swift */; };
 		B5DDFD8627FEA08D00DCF55A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDFD8527FEA08D00DCF55A /* SceneDelegate.swift */; };
 		B5DDFD8827FEA08D00DCF55A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDFD8727FEA08D00DCF55A /* ViewController.swift */; };
@@ -42,6 +44,8 @@
 		B534886C2804612700A0B292 /* MilestoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestoneViewController.swift; sourceTree = "<group>"; };
 		B534886D2804612700A0B292 /* MilestoneMealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestoneMealTableViewCell.swift; sourceTree = "<group>"; };
 		B53488702804634200A0B292 /* StepByStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepByStepViewController.swift; sourceTree = "<group>"; };
+		B53488722806B2C000A0B292 /* PreparationDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreparationDetailTableViewCell.swift; sourceTree = "<group>"; };
+		B53488742806CE2800A0B292 /* CongratsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratsViewController.swift; sourceTree = "<group>"; };
 		B5DDFD8027FEA08D00DCF55A /* SunnySideUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunnySideUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DDFD8327FEA08D00DCF55A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5DDFD8527FEA08D00DCF55A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				B534886D2804612700A0B292 /* MilestoneMealTableViewCell.swift */,
 				B534886C2804612700A0B292 /* MilestoneViewController.swift */,
 				B53488702804634200A0B292 /* StepByStepViewController.swift */,
+				B53488722806B2C000A0B292 /* PreparationDetailTableViewCell.swift */,
+				B53488742806CE2800A0B292 /* CongratsViewController.swift */,
 			);
 			path = SunnySideUp;
 			sourceTree = "<group>";
@@ -180,9 +186,11 @@
 				B534885B2803BF4A00A0B292 /* Filter1ViewController.swift in Sources */,
 				B53488712804634200A0B292 /* StepByStepViewController.swift in Sources */,
 				B5348869280458CD00A0B292 /* IngredientListViewController.swift in Sources */,
+				B53488752806CE2800A0B292 /* CongratsViewController.swift in Sources */,
 				B53488632804292E00A0B292 /* RecipeListTableViewCell.swift in Sources */,
 				B5DDFD8827FEA08D00DCF55A /* ViewController.swift in Sources */,
 				B53488612804290500A0B292 /* StructureDefinition.swift in Sources */,
+				B53488732806B2C000A0B292 /* PreparationDetailTableViewCell.swift in Sources */,
 				B534885C2803BF4A00A0B292 /* Filter2ViewController.swift in Sources */,
 				B53488572803BF3D00A0B292 /* WelcomeViewController.swift in Sources */,
 				B534885F280428CB00A0B292 /* RecipeListViewController.swift in Sources */,

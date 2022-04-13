@@ -40,7 +40,12 @@ class MilestoneMealTableViewCell: UITableViewCell{
     }
     
     @IBOutlet weak var MilestoneMealNumber: UILabel!
-    @IBOutlet weak var MilestoneMealLabel: UILabel!
+    @IBOutlet weak var MilestoneMealLabel: UILabel! {
+        didSet {
+            MilestoneMealLabel.numberOfLines = 2
+        }
+    }
+    
     @IBOutlet weak var MilestoneMealImageView: UIImageView! {
         didSet {
             MilestoneMealImageView.layer.cornerRadius = 10
