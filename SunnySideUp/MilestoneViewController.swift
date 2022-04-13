@@ -124,7 +124,7 @@ extension MilestoneViewController: UITableViewDataSource {
         var menus: [Recipes] = []
         
         for i in 0...oneWeekRecipe.count - 1 {
-            if oneWeekRecipe[i].dayNumber == 1 {
+            if oneWeekRecipe[i].dayNumber == 2 {
                 for j in 0...recipeData.recipeArray.count - 1 {
                     if oneWeekRecipe[i].recipeId == recipeData.recipeArray[j].recipeId {
                         menus.append(recipeData.recipeArray[j])
@@ -159,7 +159,10 @@ extension MilestoneViewController: UITableViewDataSource {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "StepByStepView") as! StepByStepViewController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .crossDissolve
-
+            
+            controller.index = menu.recipeId
+            controller.recipe = recipeData.recipeArray[menu.recipeId - 1]
+            
             self.present(controller, animated: true)
             
 //            // coba debugging
