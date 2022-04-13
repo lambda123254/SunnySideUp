@@ -61,7 +61,7 @@ struct Instruction {
 struct WeeklyRecipe {
     let dayNumber: Int
     let recipeId: Int
-    
+    var status: Int
 }
 class recipeData {
 
@@ -246,7 +246,7 @@ class recipeData {
     static var weeklyRecipeArray: [WeeklyRecipe] = []
     
     static func setWeeklyRecipe(dayNumber: Int, recipeId: Int){
-        recipeData.weeklyRecipeArray.append(WeeklyRecipe(dayNumber: dayNumber, recipeId: recipeId))
+        recipeData.weeklyRecipeArray.append(WeeklyRecipe(dayNumber: dayNumber, recipeId: recipeId, status: 0))
     }
     
 }
