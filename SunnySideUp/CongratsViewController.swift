@@ -19,6 +19,13 @@ class CongratsViewController: ViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func doneBtnPressed(_ sender: Any) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "MilestoneView") as! MilestoneViewController
+        controller.modalPresentationStyle = .fullScreen
+        controller.modalTransitionStyle = .crossDissolve
+
+        self.present(controller, animated: true)
+    }
     
 
     /*
